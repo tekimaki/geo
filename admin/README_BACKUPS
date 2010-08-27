@@ -1,0 +1,7 @@
+If you need to migrate or backup a postgis enabled db:
+
+dump the old database
+createdb
+using postgres user load postgis into the database
+grant all on geometry_columns to real database user
+load dump
