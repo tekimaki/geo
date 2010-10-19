@@ -1,10 +1,10 @@
 ---
 geo: 
-  version: 0.0.0
+  version: 0.0.1
   required: false
   requirements: 
     liberty: 
-      min: 2.1.4
+      min: 2.1.7
   description: >
     A simple Liberty Service that any
     package can use to store geographic data
@@ -25,3 +25,15 @@ geo:
       amsl_unit C(2)
       CONSTRAINT ', CONSTRAINT `geo_ref` FOREIGN KEY (`content_id`) REFERENCES `liberty_content`( `content_id` )'
       
+  plugins:
+    global_positioning:
+      description: Enables the addition of geo spacial data to any content
+      handler_file: LibertyGeo.php
+      api_handlers:
+        sql:
+          content_load_sql: geo_content_load_sql
+          content_list_sql: geo_content_list_sql
+        function:
+          content_preview: geo_content_preview
+          content_store: geo_content_store
+          content_expunge: geo_content_expunge
