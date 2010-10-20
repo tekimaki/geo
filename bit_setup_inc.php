@@ -9,6 +9,7 @@ $registerHash = array(
 $gBitSystem->registerPackage( $registerHash );
 
 if( $gBitSystem->isPackageActive( 'geo' ) ) {
+	/*
 	require_once( GEO_PKG_PATH.'LibertyGeo.php' );
 
 	$gLibertySystem->registerService( 
@@ -25,5 +26,6 @@ if( $gBitSystem->isPackageActive( 'geo' ) ) {
 			'description' => 'Enables the addition of geo spacial data to any content.'
 		)
 	);
+	*/
 }
 
